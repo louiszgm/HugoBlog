@@ -25,6 +25,7 @@
 - The menu item /identifier/ is auto-set.
 - The menu item /weight/ and post /weight/ if needed have to be
   manually specified as shown above.
+#+hugo: more
 ** A sub-heading under that heading
 - It's draft state will be marked as =true= because of =#+hugo_draft:
   true=.
@@ -34,9 +35,3 @@ titled /Writing Hugo blog in Org/ to a Hugo post.
 
 The exported Markdown has a little comment footer as set in the /Local
 Variables/ section below.
-#+hugo: more
-* Footnotes
-* COMMENT Local Variables                                           :ARCHIVE:
-# Local Variables:
-# org-hugo-footer: "\n\n[//]: # \"Exported with love from a post written in Org mode\"\n[//]: # \"- https://github.com/kaushalmodi/ox-hugo\""
-# End:
