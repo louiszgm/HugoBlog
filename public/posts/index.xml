@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Jane - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Jane - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 19 Nov 2018 14:18:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/blog/</link>
+      <pubDate>Mon, 19 Nov 2018 14:18:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/blog/</guid>
+      <description>Hello World! This is my First Blog! Written by Org-Mode in Emacs. Used org2nikola to Export Html. Powered by Nikola. 管理docker脚本 org-mode 通过emacs的org-mode来管理docker的脚本有以下好处: 不用在多个</description>
+    </item>
+    
+  </channel>
+</rss>

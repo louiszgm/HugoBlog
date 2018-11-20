@@ -1,5 +1,5 @@
 #+hugo_base_dir: ../
-#+hugo_section: ./post
+#+hugo_section: ./posts
 
 #+hugo_weight: 2001
 #+hugo_auto_set_lastmod: t
@@ -34,6 +34,7 @@ titled /Writing Hugo blog in Org/ to a Hugo post.
 
 The exported Markdown has a little comment footer as set in the /Local
 Variables/ section below.
+#+hugo: more
 * Footnotes
 * COMMENT Local Variables                                           :ARCHIVE:
 # Local Variables:

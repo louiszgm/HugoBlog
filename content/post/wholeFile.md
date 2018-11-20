@@ -1,7 +1,7 @@
 +++
 title = "Writing Hugo blog in Org (File Export)"
 date = 2017-09-10
-lastmod = 2018-11-19T19:59:01+08:00
+lastmod = 2018-11-20T09:11:09+08:00
 tags = ["hugo", "org"]
 categories = ["emacs"]
 draft = false
@@ -36,3 +36,8 @@ titled _Writing Hugo blog in Org_ to a Hugo post.
 
 The exported Markdown has a little comment footer as set in the _Local
 Variables_ section below.
+
+<!--more-->
+
+[//]: # "Exported with love from a post written in Org mode"
+[//]: # "- https://github.com/kaushalmodi/ox-hugo"

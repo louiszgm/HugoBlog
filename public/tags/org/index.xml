@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Org on Jane - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/tags/org/</link>
+    <description>Recent content in Org on Jane - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 10 Sep 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing Hugo blog in Org (File Export)</title>
+      <link>http://localhost:1313/post/wholefile/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/wholefile/</guid>
+      <description>First heading within the post  This post will be exported as content/posts/writing-hugo-blog-in-org-file-export.md. Its title will be &amp;ldquo;Writing Hugo blog in Org&amp;rdquo;. It will have hugo and org tags and emacs as category. The lastmod property in the front-matter is set automatically to the time of export. The menu item identifier is auto-set. The menu item weight and post weight if needed have to be manually specified as shown above.</description>
+    </item>
+    
+  </channel>
+</rss>
