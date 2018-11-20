@@ -1,7 +1,7 @@
 +++
 title = "Writing Hugo blog in Org (File Export)"
 date = 2017-09-10
-lastmod = 2018-11-20T16:40:26+08:00
+lastmod = 2018-11-20T16:48:21+08:00
 tags = ["hugo", "org"]
 categories = ["emacs"]
 draft = false
@@ -25,10 +25,10 @@ gamma = 10
 -   The menu item _weight_ and post _weight_ if needed have to be
     manually specified as shown above.
 
-<!--more-->
-
 
 ### A sub-heading under that heading {#a-sub-heading-under-that-heading}
+
+<!--more-->
 
 -   It's draft state will be marked as `true` because of `#+hugo_draft:
       true`.
