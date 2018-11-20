@@ -1,19 +1,13 @@
 #+hugo_base_dir: ../
 #+hugo_section: ./post
-
 #+hugo_weight: 2001
 #+hugo_auto_set_lastmod: t
-
-#+title: Writing Hugo blog in Org (File Export)
-
-#+date: 2017-09-10
-
-
 #+hugo_tags: hugo org
 #+hugo_categories: emacs
 #+hugo_custom_front_matter: :foo bar :baz zoo :alpha 1 :beta "two words" :gamma 10
-
 #+hugo_draft: false
+#+title: Writing Hugo blog in Org (File Export)
+#+date: 2017-09-11
 
 * First heading within the post
 - This post will be exported as

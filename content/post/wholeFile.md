@@ -1,7 +1,7 @@
 +++
 title = "Writing Hugo blog in Org (File Export)"
-date = 2017-09-10
-lastmod = 2018-11-20T16:48:21+08:00
+date = 2017-09-11
+lastmod = 2018-11-20T16:54:23+08:00
 tags = ["hugo", "org"]
 categories = ["emacs"]
 draft = false
