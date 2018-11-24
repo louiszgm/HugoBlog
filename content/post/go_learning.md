@@ -1,6 +1,6 @@
 +++
 title = "编程语言部分概念解读"
-lastmod = 2018-11-24T17:47:57+08:00
+lastmod = 2018-11-25T00:04:14+08:00
 draft = false
 weight = 2001
 foo = "bar"

@@ -1,0 +1,30 @@
+#+hugo_base_dir: ../
+#+hugo_section: ./
+#+hugo_weight: 2001
+#+hugo_auto_set_lastmod: t
+#+hugo_draft: false
+#+author:
+#+hugo_custom_front_matter: :author "louiszgm"
+* About
+:PROPERTIES:
+:EXPORT_FILE_NAME: about
+:END:
+Hi! I am louiszgm!
+
+* 应用工程
+目的是为了提升软件的质量和开发效率
+** Jenkins任务的配置脚本化
+S：Jenkins任务都需要人工的管理，每次新开发的工具想集成到任务中推动的成本过大。
+T: 将团队现有的android app的持续集成抽象成通用的方案，并进行技术的选择和落地
+A：
+通过JenkinsJobBuilder进行Jenkins任务的管理，
+通过Pipeline的任务类型，进行项目的持续集成。
+通过Json Editor自定义Jenkins任务参数化构建视图的模版。
+编写gradle插件，进行Android app软件质量的检测以及团队规范的检测。
+编写Go 的web后台，对外暴露Jenkins任务管理和控制的能力。
+Docker的使用
+
+R：实现了Jenkins任务统一模版化的管理，减少人工配置Jenkins任务的工作。实现了持续集成平台的闭环，软件质量的checklist。
+
+** IntelliJ 插件的开发
+** 自定义lint检查规则
