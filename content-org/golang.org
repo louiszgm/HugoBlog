@@ -1,5 +1,17 @@
-* 术语解读
+#+hugo_base_dir: ../
+#+hugo_section: ./post
+#+hugo_weight: 2001
+#+hugo_auto_set_lastmod: t
+#+hugo_draft: false
+* 编程语言部分概念解读 
+:PROPERTIES:
+:EXPORT_FILE_NAME: go_learning
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :foo bar :baz zoo :alpha 1 :beta "two words" :gamma 10
+:END:
 
+学习go语言过程里面对编程语言部分概念的理解记录。
+
+#+hugo: more
 卫述语句：
 卫述语句是指被用来检查关键的先决条件的合法性，并在检查未通过的情况下立即种植当前代码块的执行的语句
 
