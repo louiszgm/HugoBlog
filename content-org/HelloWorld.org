@@ -6,9 +6,11 @@
 #+hugo_categories: emacs
 #+hugo_custom_front_matter: :foo bar :baz zoo :alpha 1 :beta "two words" :gamma 10
 #+hugo_draft: false
+#+author:
+#+hugo_custom_front_matter: :author "louiszgm"
 #+title: Hello World!
 
-
+* Hello World
 This is my First Blog!
 
 Written by [[https://orgmode.org/][Org-Mode]] in ~Emacs~.
@@ -17,6 +19,6 @@ Export to Markdown by [[https://ox-hugo.scripter.co/][ox-hugo]].
 
 Powered by [[https://gohugo.io/][Hugo]].
 
-[[file:imgs/hello.jpg]]
-
 #+hugo: more
+
+[[file:imgs/hello.jpg]]
