@@ -7,13 +7,15 @@
 #+hugo_custom_front_matter: :author "louiszgm"
 * About
 :PROPERTIES:
+:EXPORT_HUGO_MENU: :menu "main"
 :EXPORT_FILE_NAME: about
 :END:
 Hi! I am louiszgm!
-
+* 自我介绍
+面试官你好，我叫邹贵明。
 * 应用工程
 目的是为了提升软件的质量和开发效率
-** Jenkins任务的配置脚本化
+** Jenkins任务的配置脚本化（基础设置的脚本话）
 S：Jenkins任务都需要人工的管理，每次新开发的工具想集成到任务中推动的成本过大。
 T: 将团队现有的android app的持续集成抽象成通用的方案，并进行技术的选择和落地
 A：
@@ -27,4 +29,17 @@ Docker的使用
 R：实现了Jenkins任务统一模版化的管理，减少人工配置Jenkins任务的工作。实现了持续集成平台的闭环，软件质量的checklist。
 
 ** IntelliJ 插件的开发
-** 自定义lint检查规则
+S：AndroidStudio是开发人员用的最多的工具，在这此平台上开发一个提高效率的工具
+T：插件的开发
+A：
+通过阅读官方文档的插件开发指导和参考Ali P3C的IntelliJ IDEA插件来完成工作
+R：帮助开发人员能够快速的通过一个集中化的地方去到最常用的平台，以及执行最常用的一些开发中需要用到的cli（比如Android的常用adb命令）
+** 本地代码commit前的代码规范检测工具
+S：项目代码中很多都不规范。
+T：负责所需技术的选型和落地
+A：
+通过githook在提交前运行编写的python脚本从而调用到代码检测的gradle插件。
+gradle插件采用的是二进制插件的形式，集成了checkstyle 和 AndroidLint等代码检测工具。
+通过自定义AndroidLint规则来满足团队规范检测的需求。
+自定义的gradle是托管到公司的私有maven仓库上
+R：总计运行了5372次的检测，减少了一些代码上的低级错误
