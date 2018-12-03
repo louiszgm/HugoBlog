@@ -3,6 +3,8 @@
 #+hugo_weight: 2001
 #+hugo_auto_set_lastmod: t
 #+hugo_draft: false
+#+author:
+#+hugo_custom_front_matter: :author "louiszgm"
 * 编程语言部分概念解读 
 :PROPERTIES:
 :EXPORT_FILE_NAME: go_learning
