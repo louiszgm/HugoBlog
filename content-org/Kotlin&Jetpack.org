@@ -33,4 +33,8 @@ fun main() {
 **** Kotlin和Rxjava，Retrofit的交互
 **** 有哪些Java的东西在Kotlin中是 ‘没有’的
 *** Kotlin空安全以及对应的各种‘符号’的解释
+- ?
+- !!
+- ?.
+- !!.
 ** 现在有哪些公司在用Kotlin了？
