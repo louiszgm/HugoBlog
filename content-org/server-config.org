@@ -31,7 +31,7 @@ pip install shadowsocks
 
 vi /etc/systemd/system/shadowsocks.service
 #+BEGIN_SRC config
-[Unit]
+tea[Unit]
 Description=Shadowsocks
 [Service]
 TimeoutStartSec=0
