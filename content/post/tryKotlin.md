@@ -1,6 +1,6 @@
 +++
 title = "Kotlin上手指南指导方向"
-lastmod = 2018-12-11T10:44:29+08:00
+lastmod = 2018-12-11T18:09:50+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
@@ -8,7 +8,7 @@ author = "louiszgm"
 
 国际惯例，先上Hello World。
 
-```java
+```Kotlin
 package hello
 
 fun main() {
@@ -39,6 +39,18 @@ fun main() {
 
 
 ## Kotlin的好处以及坏处 {#kotlin的好处以及坏处}
+
+使用Kotlin可以提高代码的简洁性，
+
+-   `创建POJO`  在Kotlin中，创建一个POJO只需要一行代码。在Java中，需要写很多的比如 `getters,setters,toString()` 等方法
+
+```Kotlin
+data class Customer(val name: String, val email: String, val company: String)
+```
+
+-   `单例的创建` 在Kotlin中，可以很简单的就创建一个单例。在Java写过单例的同学们都知道，创建单例的方式有N种。
+
+`lambda表达式`
 
 
 ## 在现有的项目中应该怎么引进 {#在现有的项目中应该怎么引进}

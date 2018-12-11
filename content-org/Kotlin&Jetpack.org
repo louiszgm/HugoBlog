@@ -9,17 +9,16 @@
 * Kotlin上手指南指导方向
 :PROPERTIES:
 :EXPORT_FILE_NAME: tryKotlin
+:HUGO_CODE_FENCE: true
 :END:
 国际惯例，先上Hello World。
-
-#+BEGIN_SRC java
+#+BEGIN_SRC Kotlin
 package hello
 
 fun main() {
     println("Hello World")
 }
 #+END_SRC
-
 #+hugo: more
 
 ** 快速体验Kotlin
@@ -36,6 +35,17 @@ fun main() {
 
 *** 官方提供了哪些快速上手的渠道？
 ** Kotlin的好处以及坏处
+使用Kotlin可以提高代码的简洁性，
+
+- ~创建POJO~  在Kotlin中，创建一个POJO只需要一行代码。在Java中，需要写很多的比如 ~getters,setters,toString()~ 等方法
+#+BEGIN_SRC Kotlin
+data class Customer(val name: String, val email: String, val company: String)
+#+END_SRC
+
+
+- ~单例的创建~ 在Kotlin中，可以很简单的就创建一个单例。在Java写过单例的同学们都知道，创建单例的方式有N种。
+
+~lambda表达式~
 ** 在现有的项目中应该怎么引进
 ** 引进Kotlin过程中的疑惑
 *** Java 和 Kotlin交互有什么问题？
