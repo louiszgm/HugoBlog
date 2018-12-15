@@ -43,15 +43,25 @@ data class Customer(val name: String, val email: String, val company: String)
 #+END_SRC
 
 
-- ~单例的创建~ 在Kotlin中，可以很简单的就创建一个单例。在Java写过单例的同学们都知道，创建单例的方式有N种。
+- ~单例的创建~ 在Kotlin中，可以很简单的通过 ~object~  关键字就创建一个单例。在Java写过单例的同学们都知道，创建单例的方式有N种。
+#+BEGIN_SRC Kotlin
+object ThisIsASingleton {
+    val companyName: String = "JetBrains"
+}
+#+END_SRC
 
-~lambda表达式~
+- ~lambda表达式~ 在Kotlin中，天生就支持 ~lambda表达式~
+#+BEGIN_SRC Kotlin
+val positiveNumbers = list.filter { it > 0 }
+#+END_SRC
 ** 在现有的项目中应该怎么引进
 ** 引进Kotlin过程中的疑惑
 *** Java 和 Kotlin交互有什么问题？
 - Kotlin调用Java
 - Java调用Kotlin
 **** Kotlin和Rxjava，Retrofit的交互
+Rxjava 和 Retrofit ，这两个库基本上是Android应用开发者的必备库了。所以，在用kotlin的时候，估计这个点是被考虑的最多的。
+
 **** 有哪些Java的东西在Kotlin中是 ‘没有’的
 *** Kotlin空安全以及对应的各种‘符号’的解释
 - ?

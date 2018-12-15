@@ -1,6 +1,6 @@
 +++
 title = "Kotlin上手指南指导方向"
-lastmod = 2018-12-11T18:09:50+08:00
+lastmod = 2018-12-15T15:42:20+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
@@ -48,9 +48,19 @@ fun main() {
 data class Customer(val name: String, val email: String, val company: String)
 ```
 
--   `单例的创建` 在Kotlin中，可以很简单的就创建一个单例。在Java写过单例的同学们都知道，创建单例的方式有N种。
+-   `单例的创建` 在Kotlin中，可以很简单的通过 `object`  关键字就创建一个单例。在Java写过单例的同学们都知道，创建单例的方式有N种。
 
-`lambda表达式`
+```Kotlin
+object ThisIsASingleton {
+    val companyName: String = "JetBrains"
+}
+```
+
+-   `lambda表达式` 在Kotlin中，天生就支持 `lambda表达式`
+
+```Kotlin
+val positiveNumbers = list.filter { it > 0 }
+```
 
 
 ## 在现有的项目中应该怎么引进 {#在现有的项目中应该怎么引进}
@@ -66,6 +76,8 @@ data class Customer(val name: String, val email: String, val company: String)
 
 
 #### Kotlin和Rxjava，Retrofit的交互 {#kotlin和rxjava-retrofit的交互}
+
+Rxjava 和 Retrofit ，这两个库基本上是Android应用开发者的必备库了。所以，在用kotlin的时候，估计这个点是被考虑的最多的。
 
 
 #### 有哪些Java的东西在Kotlin中是 ‘没有’的 {#有哪些java的东西在kotlin中是-没有-的}
