@@ -1,6 +1,6 @@
 +++
 title = "Kotlin上手指南指导方向"
-lastmod = 2018-12-16T17:15:39+08:00
+lastmod = 2018-12-16T21:55:37+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
@@ -106,7 +106,7 @@ Rxjava 和 Retrofit ，这两个库基本上是Android应用开发者的必备�
 
 `?` `?.` `?:` `!!.`
 
-我们从变量的声明开始去理解Kotlin帮我们做的这些控安全的操作
+我们从变量的声明开始去理解Kotlin帮我们做的这些空安全的操作
 
 在Kotlin中，声明一个变量默认是空安全的。
 
