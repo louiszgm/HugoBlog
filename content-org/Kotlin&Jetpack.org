@@ -75,7 +75,7 @@ Kotlin is designed with Java Interoperability in mind
 Rxjava 和 Retrofit ，这两个库基本上是Android应用开发者的必备库了。所以，在用kotlin的时候，估计这个点是被考虑的最多的。
 
 **** 有哪些Java的东西在Kotlin中是 ‘没有’的
-**** 匿名内部类
+在Java中，有很多情况下我们需要传入一个
 
 *** Kotlin空安全以及对应的各种‘符号’的解释
 - Kotlin的空安全是什么？
