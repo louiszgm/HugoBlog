@@ -73,6 +73,29 @@ Kotlin is designed with Java Interoperability in mind
 - Java调用Kotlin
 **** Kotlin和Rxjava，Retrofit的交互
 Rxjava 和 Retrofit ，这两个库基本上是Android应用开发者的必备库了。所以，在用kotlin的时候，估计这个点是被考虑的最多的。
+**** Kotlin中的SAM
+当Kotlin中使用SAM作为方法参数的时候，就不能使用SAM Conversion了。
+必须得使用一个对应类型的变量，或者使用 ~object~
+
+接下来，先说明一下什么是 ~SAM~ 和 ~SAM Conversion~
+
+- SAM,全称是Single Abstract Method。是一个 ~只有一个方法的接口~ 。
+
+例如Android中的点击事件的监听器 ~OnClickListener~ 就是一个SAM
+#+BEGIN_SRC Java
+public interface OnClickListener {
+    void onClick(View v);
+}
+#+END_SRC
+
+SAM Conversion, 指的是通过 ~某种形式~ ，转换为某个接口的具体实现。
+
+在Java8以上， ~某种形式~ 指的是：
+- Lambda (Java8加入)
+- Method Reference （Java8加入）
+- Anonymous Implementation
+
+在Kotlin中， ~某种形式~ 指的是:
 
 **** 有哪些Java的东西在Kotlin中是 ‘没有’的
 在Java中，有很多情况下我们需要传入一个

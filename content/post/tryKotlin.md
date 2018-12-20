@@ -1,6 +1,6 @@
 +++
 title = "Kotlin上手指南指导方向"
-lastmod = 2018-12-16T21:55:37+08:00
+lastmod = 2018-12-20T17:33:35+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
@@ -90,10 +90,37 @@ val positiveNumbers = list.filter { it > 0 }
 Rxjava 和 Retrofit ，这两个库基本上是Android应用开发者的必备库了。所以，在用kotlin的时候，估计这个点是被考虑的最多的。
 
 
+#### Kotlin中的SAM {#kotlin中的sam}
+
+当Kotlin中使用SAM作为方法参数的时候，就不能使用SAM Conversion了。
+必须得使用一个对应类型的变量，或者使用 `object`
+
+接下来，先说明一下什么是 `SAM` 和 `SAM Conversion`
+
+-   SAM,全称是Single Abstract Method。是一个 `只有一个方法的接口` 。
+
+例如Android中的点击事件的监听器 `OnClickListener` 就是一个SAM
+
+```Java
+public interface OnClickListener {
+    void onClick(View v);
+}
+```
+
+SAM Conversion, 指的是通过 `某种形式` ，转换为某个接口的具体实现。
+
+在Java8以上， `某种形式` 指的是：
+
+-   Lambda (Java8加入)
+-   Method Reference （Java8加入）
+-   Anonymous Implementation
+
+在Kotlin中， `某种形式` 指的是:
+
+
 #### 有哪些Java的东西在Kotlin中是 ‘没有’的 {#有哪些java的东西在kotlin中是-没有-的}
 
-
-#### 匿名内部类 {#匿名内部类}
+在Java中，有很多情况下我们需要传入一个
 
 
 ### Kotlin空安全以及对应的各种‘符号’的解释 {#kotlin空安全以及对应的各种-符号-的解释}
