@@ -179,6 +179,33 @@ class KotlinSamPractice {
     }
 }
 #+END_SRC
+
+
+下面是对KotlinObservable新增了一个类型是函数字面量的方法，这样子就可以使用Kotlin 的Lambda表达式了
+#+BEGIN_SRC Kotlin
+interface KotlinConsumer<T> {
+    fun accept(value: T)
+}
+
+class KotlinObservable<T> {
+    fun subscribe(onNext: KotlinConsumer<T>) {}
+    fun subscribe(consumer: (value: T) -> Unit){}
+}
+
+class KotlinSamPractice {
+    fun main(){
+        //通过匿名实现的方式
+        KotlinObservable<String>().subscribe(object :KotlinConsumer<String>{
+            override fun accept(value: String) {
+                println("Hello From Anonymous Implementation")
+            }
+        })
+
+        //Lambda表达式
+        KotlinObservable<String>().subscribe { value -> println("Hellow From Lambda") }
+    }
+}
+#+END_SRC
 **** 有哪些Java的东西在Kotlin中是 ‘没有’的
 在Java中，有很多情况下我们需要传入一个
 
