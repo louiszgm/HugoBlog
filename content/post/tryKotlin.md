@@ -1,6 +1,6 @@
 +++
 title = "Kotlin上手指南指导方向"
-lastmod = 2018-12-21T19:50:27+08:00
+lastmod = 2018-12-21T23:56:46+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
@@ -201,6 +201,33 @@ class KotlinSamPractice {
                 println("Hello From Anonymous Implementation")
             }
         })
+    }
+}
+```
+
+下面是对KotlinObservable新增了一个类型是函数字面量的方法，这样子就可以使用Kotlin 的Lambda表达式了
+
+```Kotlin
+interface KotlinConsumer<T> {
+    fun accept(value: T)
+}
+
+class KotlinObservable<T> {
+    fun subscribe(onNext: KotlinConsumer<T>) {}
+    fun subscribe(consumer: (value: T) -> Unit){}
+}
+
+class KotlinSamPractice {
+    fun main(){
+        //通过匿名实现的方式
+        KotlinObservable<String>().subscribe(object :KotlinConsumer<String>{
+            override fun accept(value: String) {
+                println("Hello From Anonymous Implementation")
+            }
+        })
+
+        //Lambda表达式
+        KotlinObservable<String>().subscribe { value -> println("Hellow From Lambda") }
     }
 }
 ```
