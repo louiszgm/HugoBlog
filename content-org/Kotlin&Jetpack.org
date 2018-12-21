@@ -90,13 +90,95 @@ public interface OnClickListener {
 
 SAM Conversion, 指的是通过 ~某种形式~ ，转换为某个接口的具体实现。
 
-在Java8以上， ~某种形式~ 指的是：
+在Java8以上， SAM Conversion有如下几种：
 - Lambda (Java8加入)
 - Method Reference （Java8加入）
 - Anonymous Implementation
 
-在Kotlin中， ~某种形式~ 指的是:
+#+BEGIN_SRC Java
+public class JavaSamPractice extends Activity{
 
+    private Button button;
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        //通过匿名实现的方式
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Hello From Anonymous Implementation");
+            }
+        });
+        //通过Lambda的语法
+        button.setOnClickListener(view -> System.out.println("Hello From Lambda"));
+        //通过Method Reference的语法
+        button.setOnClickListener(this::clickSayHello);
+    }
+
+    private void clickSayHello(View view){
+        System.out.println("Hello From Method Reference");
+    }
+}
+#+END_SRC
+
+在Kotlin中，方法的调用者为 ~Java对象~ 和 ~Kotlin对象~ 时，SAM Conversion分别如下所示:
+
+当方法的调用者是 ~Java~ 对象时，SAM Conversion有如下几种：
+- Lambda (Java8加入)
+- Method Reference （Java8加入）
+- Anonymous Implementation
+
+这里的 ~button~ 就是Java对象
+#+BEGIN_SRC Kotlin
+class KotlinSamPractice : Activity() {
+    lateinit var button: Button
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        //通过匿名实现的方式，在Kotlin中，用object 来声明一个匿名的接口实现
+        button.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                println("Hello From Anonymous Implementation")
+            }
+        })
+        //通过Lambda的语法
+        button.setOnClickListener({ view -> println("Hello From Lambda") })
+
+        //通过Method Reference的语法
+        button.setOnClickListener(this::clickSayHello)
+    }
+    fun clickSayHello(view: View) {
+        println("Hello From Method Reference")
+    }
+}
+#+END_SRC
+我们可以看到，这里的三种方式是和上面Java 的SAM Conversion是一样的。
+
+当方法的调用者是 ~Kotlin~ 对象时，只有以下的一种SAM Conversion：
+- Anonymous Implementation
+
+这里的KotlinConsumer就是一个SAM
+#+BEGIN_SRC Kotlin
+interface KotlinConsumer<T> {
+    fun accept(value: T)
+}
+
+class KotlinObservable<T> {
+    fun subscribe(onNext: KotlinConsumer<T>) {}
+}
+
+class KotlinSamPractice {
+    fun main(){
+        //通过匿名实现的方式
+        KotlinObservable<String>().subscribe(object :KotlinConsumer<String>{
+            override fun accept(value: String) {
+                println("Hello From Anonymous Implementation")
+            }
+        })
+    }
+}
+#+END_SRC
 **** 有哪些Java的东西在Kotlin中是 ‘没有’的
 在Java中，有很多情况下我们需要传入一个
 
