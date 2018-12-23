@@ -216,6 +216,13 @@ class KotlinSamPractice {
 :EXPORT_FILE_NAME: KotlinNullSafety
 :HUGO_CODE_FENCE: true
 :END:
+
+#+BEGIN_QUOTE
+Kotlin's type system is aimed at eliminating the danger of null references from code, also known as the [[https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare][The Billion Dollar Mistake.]]
+#+END_QUOTE
+[[file:imgs/billionDollarMistake.jpg]]
+#+hugo: more
+
 - Kotlin的空安全是什么？
 
 可以大幅度的减少我们应用的 ~NullPointerException~ （文章后面会使用 ~NPE~ 来表示这个异常)

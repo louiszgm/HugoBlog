@@ -1,10 +1,16 @@
 +++
 title = "Kotlin空安全以及对应的各种‘符号’的解释"
-lastmod = 2018-12-23T10:11:55+08:00
+lastmod = 2018-12-23T10:20:28+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
 +++
+
+> Kotlin's type system is aimed at eliminating the danger of null references from code, also known as the [The Billion Dollar Mistake.](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare)
+
+{{< figure src="/ox-hugo/billionDollarMistake.jpg" >}}
+
+<!--more-->
 
 -   Kotlin的空安全是什么？
 
