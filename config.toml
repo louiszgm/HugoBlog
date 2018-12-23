@@ -9,7 +9,7 @@ enableEmoji = true
 theme = "jane"
 
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
-paginate = 3              # Number of articles displayed on the homepage  # 首页每页显示的文章数
+paginate = 10              # Number of articles displayed on the homepage  # 首页每页显示的文章数
 rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = "UA-129735484-1"      # UA-XXXXXXXX-X
@@ -23,9 +23,9 @@ PygmentsCodefencesGuessSyntax = true
 PygmentsOptions = "linenos=table"
 
 # language support # en / zh-cn / other... translations present in i18n/
-defaultContentLanguage = "en"           # Default language to use
-[languages.en]
-  languageCode = "en"
+defaultContentLanguage = "zh-cn"           # Default language to use
+[languages.zh-cn]
+  languageCode = "zh-cn"
 
 [author]                  # essential                     # 必需
   name = "louiszgm"
@@ -36,22 +36,22 @@ defaultContentLanguage = "en"           # Default language to use
   filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 配置目录
-  name = "This is Home"
+  name = "主页"
   weight = 10
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "Archives"
+  name = "全部文章"
   weight = 20
   identifier = "archives"
   url = "/post"
 [[menu.main]]
-  name = "Tags"
+  name = "标签"
   weight = 30
   identifier = "tags"
   url = "/tags/"
 [[menu.main]]
-  name = "Categories"
+  name = "分类"
   weight = 40
   identifier = "categories"
   url = "/categories/"
@@ -64,12 +64,29 @@ defaultContentLanguage = "en"           # Default language to use
   rssFullContent = true     # if false, Rss feed instead of the summary
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "louszgm's Blog"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "louiszgm's Blog"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["Hugo", "theme","jane"]
   description = "Be simple! But passion!"
 
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
   dateFormatToUse = "2006-01-02"
+
+  # show word count and read time ?                       # 是否显示字数统计与阅读时间
+  moreMeta = true
+
+  [params.utteranc]         # utteranc is a comment system based on GitHub issues. see https://utteranc.es
+    enable = true
+    repo = "louiszgm/blog-comment"    # The repo to store comments
+    issueTerm = "pathname"
+
+  [params.reward]                                         # 文章打赏
+    enable = true
+    wechat = "/images/wechat-qr-code.png"           # 微信二维码
+    alipay = "/images/alipay-qr-code.png"           # 支付宝二维码
+  [params.counter.leancloud]  # Chinese leancloud visitor counter  # leancloud 计数器
+    enable = true
+    appId = "h6FRp4rgilsIFpjOd0kIKHNY-gzGzoHsz"
+    appKey = "JufS27HIqG7FIOlVLCozJzhc"
 
   # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.

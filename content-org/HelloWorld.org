@@ -1,7 +1,8 @@
 #+hugo_base_dir: ../
 #+hugo_section: ./post
 #+hugo_weight: 2001
-#+hugo_auto_set_lastmod: t
+#+date: 2018-11-23
+#+hugo_auto_set_lastmod: n
 #+hugo_tags: hugo org
 #+hugo_categories: emacs
 #+hugo_custom_front_matter: :foo bar :baz zoo :alpha 1 :beta "two words" :gamma 10
@@ -10,8 +11,7 @@
 #+hugo_custom_front_matter: :author "louiszgm"
 #+title: Hello World!
 
-* Hello World
-This is my First Blog!
+[[file:imgs/hello.jpg]]
 
 Written by [[https://orgmode.org/][Org-Mode]] in ~Emacs~.
 
@@ -20,5 +20,4 @@ Export to Markdown by [[https://ox-hugo.scripter.co/][ox-hugo]].
 Powered by [[https://gohugo.io/][Hugo]].
 
 #+hugo: more
-
-[[file:imgs/hello.jpg]]
+This is my First Blog!

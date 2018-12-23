@@ -1,6 +1,7 @@
 +++
 title = "Hello World!"
-lastmod = 2018-11-24T12:57:54+08:00
+date = 2018-11-23
+lastmod = 2018-12-23T20:43:20+08:00
 tags = ["hugo", "org"]
 categories = ["emacs"]
 draft = false
@@ -13,9 +14,7 @@ gamma = 10
 author = "louiszgm"
 +++
 
-## Hello World {#hello-world}
-
-This is my First Blog!
+{{< figure src="/ox-hugo/hello.jpg" >}}
 
 Written by [Org-Mode](https://orgmode.org/) in `Emacs`.
 
@@ -25,4 +24,4 @@ Powered by [Hugo](https://gohugo.io/).
 
 <!--more-->
 
-{{< figure src="/ox-hugo/hello.jpg" >}}
+This is my First Blog!
