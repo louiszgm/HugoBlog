@@ -209,7 +209,13 @@ class KotlinSamPractice {
 **** 有哪些Java的东西在Kotlin中是 ‘没有’的
 在Java中，有很多情况下我们需要传入一个
 
-*** Kotlin空安全以及对应的各种‘符号’的解释
+** 现在有哪些公司在用Kotlin了？
+
+* Kotlin空安全以及对应的各种‘符号’的解释
+:PROPERTIES:
+:EXPORT_FILE_NAME: KotlinNullSafety
+:HUGO_CODE_FENCE: true
+:END:
 - Kotlin的空安全是什么？
 
 可以大幅度的减少我们应用的 ~NullPointerException~ （文章后面会使用 ~NPE~ 来表示这个异常)
@@ -287,4 +293,3 @@ Kotlin帮我们做得是将NPE尽早的暴露在编译阶段，从而可以减�
 
 对于各种符号的困惑，可以参照如下的流程图来选择应该要使用哪种操作符:
 [[file:imgs/NullSafetyFlowChart.png]]
-** 现在有哪些公司在用Kotlin了？
