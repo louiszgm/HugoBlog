@@ -1,6 +1,6 @@
 +++
 title = "谈谈Kotlin中的SAM"
-lastmod = 2018-12-23T13:17:13+08:00
+lastmod = 2018-12-23T15:11:25+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
@@ -22,8 +22,7 @@ public interface OnClickListener {
 
 <!--more-->
 
-
-## [TL;DR](#总结) {#tl-dr--总结}
+[TL;DR](#tl-dr)
 
 在Java8以上， SAM Conversion有如下几种：
 
@@ -159,7 +158,7 @@ class KotlinSamPractice {
 否则，通过Lambda 和 Method Reference的语法去使用都是不可以的。
 
 
-## 总结 {#总结}
+## TL;DR {#tl-dr}
 
 以上所说的可以总结为：
 

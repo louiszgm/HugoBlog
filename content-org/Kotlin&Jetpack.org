@@ -186,7 +186,7 @@ public interface OnClickListener {
 
 - SAM Conversion, 指的是通过 ~某种形式~ ，转换为某个接口的具体实现。
 #+hugo: more
-** [[*%E6%80%BB%E7%BB%93][TL;DR]]
+[[*TL;DR][TL;DR]]
 
 在Java8以上， SAM Conversion有如下几种：
 - Lambda (Java8加入)
@@ -314,7 +314,7 @@ class KotlinSamPractice {
 然而，除非在转换之后，一个参数类型为SAM的方法提供了另外一个参数类型为functional type的方法签名（如上所示）。
 否则，通过Lambda 和 Method Reference的语法去使用都是不可以的。
 
-** 总结
+** TL;DR
 以上所说的可以总结为：
 #+BEGIN_EXAMPLE
 当Java的类库转换为Kotlin时，一些参数类型为SAM的接口。
