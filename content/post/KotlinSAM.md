@@ -1,6 +1,6 @@
 +++
 title = "谈谈Kotlin中的SAM"
-lastmod = 2018-12-23T15:11:25+08:00
+lastmod = 2018-12-23T15:24:44+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
