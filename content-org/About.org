@@ -5,10 +5,10 @@
 #+hugo_draft: false
 #+author:
 #+hugo_custom_front_matter: :author "louiszgm"
-* About
+* 关于
 :PROPERTIES:
-:EXPORT_HUGO_MENU: :menu "main"
 :EXPORT_FILE_NAME: about
+:EXPORT_HUGO_MENU: :menu "main"
 :END:
 Hi! I am louiszgm!
 * 自我介绍
