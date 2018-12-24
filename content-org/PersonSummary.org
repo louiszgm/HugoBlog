@@ -1,0 +1,34 @@
+#+hugo_base_dir: ../
+#+hugo_section: ./life
+#+hugo_weight: 2001
+#+hugo_auto_set_lastmod: t
+#+hugo_draft: true
+#+author:
+#+hugo_custom_front_matter: :author "louiszgm"
+
+* 2018年度个人总结
+这应该是第一次写年度个人总结了。主要是起到一个回顾的作用。
+顺便也练一下写文章的能力。
+** 关于生活
+今年终于把游泳给学会了。
+
+快到年底的时候，突然对自己的体重开始重视起来了。
+** 关于技术
+*** 工具
+今年学习了Emacs，org-mode。总的来说，工具类的技术，也可以说是提高自己效率的应该就只有这两个了。
+
+这两个工具的学习曲线还是挺高的，但是不得不说入门了之后会让你觉得非常的爽。
+
+*** 技术栈
+Docker，学习并进行了实战的使用。
+
+搭建了gitea，主要用于自己的一些个人项目的托管。
+
+搭建了Jenkins，主要用于自己项目的CI/CD，比如这个博客。
+
+搭建个人博客，就是你看到的这个。在最终确定用这个之前，有尝试过Jekyll,Hexo和Nikola，
+但对org-mode的支持都不如现在用的Hugo好。
+
+对以上这三个服务，都前置了Nginx。
+
+上面的都是用Docker去部署的服务。
