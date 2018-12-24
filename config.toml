@@ -55,28 +55,6 @@ defaultContentLanguage = "zh-cn"           # Default language to use
   weight = 40
   identifier = "categories"
   url = "/categories/"
-# [[menu.main]]
-#   name = "关于"
-#   weight = 50
-#   identifier = "about"
-#   url = "/about/about.md"
-
-
-[params]
-  since = "2018"            # Site creation time          # 站点建立时间
-  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
-  rssFullContent = true     # if false, Rss feed instead of the summary
-
-  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "louiszgm's Blog"        # default: the title value    # 默认值: 上面设置的title值
-  keywords = ["Hugo", "theme","jane"]
-  description = "Be simple! But passion!"
-
-  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
-  dateFormatToUse = "2006-01-02"
-
-  # show word count and read time ?                       # 是否显示字数统计与阅读时间
-  moreMeta = true
 
   [params.utteranc]         # utteranc is a comment system based on GitHub issues. see https://utteranc.es
     enable = true
@@ -92,7 +70,24 @@ defaultContentLanguage = "zh-cn"           # Default language to use
     appId = "h6FRp4rgilsIFpjOd0kIKHNY-gzGzoHsz"
     appKey = "JufS27HIqG7FIOlVLCozJzhc"
 
-  # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
+
+ [params]
+  since = "2018"            # Site creation time          # 站点建立时间
+  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
+  rssFullContent = true     # if false, Rss feed instead of the summary
+
+  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
+  logoTitle = "louiszgm's Blog"        # default: the title value    # 默认值: 上面设置的title值
+  keywords = ["Hugo", "theme","jane"]
+  description = "Be simple! But passion!"
+
+  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+  dateFormatToUse = "2006-01-02"
+
+  # show word count and read time ?                       # 是否显示字数统计与阅读时间
+  moreMeta = true
+
+ # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
   toc = true                                                                            # 是否开启目录
   photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe            # 是否启用PhotoSwipe（图片可点击）
