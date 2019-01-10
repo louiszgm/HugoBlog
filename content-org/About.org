@@ -14,15 +14,17 @@ Hi! I am louiszgm!
 * 技能
 ** 基础技能
 理解常用的各种“转换”（加密，编码，Hash）在实际运用中所发挥的作用。
-** Web，back-end
-熟悉http，RestApi
+
+** back-end
+熟悉http，熟悉规范中常用的部分（各个HttpMethod的作用，各请求参数的类型，http状态码）
 
 https， 熟悉https的证书校验和信息加密的过程。结合Nginx有实际配置https的经验。
 
-golang，接口，结构体
+golang, 基础知识，Go Gin web框架的使用
 
 ** DevOps
-Jenkins，能够编写Pipeline脚本，配置任务。
+Jenkins，能够编写Pipeline脚本（Declarative Pipeline）。
+Jenkins-Job-Builder，基础设施脚本话的一个工具。
 持续集成，流程的拉通和统一。配置的脚本化，持续集成过程中团队规范检查工具，软件质量检查工具，代码质量检查工具等的开发和接入，消息通知的接入。
 Docker, 会使用docker cli，docker-compose。
 
