@@ -26,12 +26,15 @@ Jenkins，能够编写Pipeline脚本，配置任务。
 持续集成，流程的拉通和统一。配置的脚本化，持续集成过程中团队规范检查工具，软件质量检查工具，代码质量检查工具等的开发和接入，消息通知的接入。
 Docker, 会使用docker cli，docker-compose。
 
+Linux基本操作。
+** 个人项目
+博客：louiszgm.xin
+gitea： git.louiszgm.xin
+Jenkins: ci.louiszgm.xin
 使用docker搭建了个人的git平台（gitea），Jenkins，个人博客，Nginx。
 使用Nginx作为前置的web服务器，并对各个server进行了https化。
 个人博客模拟了持续集成的流程，从本地push代码之后通过Jenkins自动构建和发布。
 各个服务都是通过docker容器进行部署，其中需要解决docker in docker以及容器网络之间互相访问等问题。
-
-Linux基本操作。
 * 自我介绍
 面试官你好，我叫邹贵明。本科毕业于2015年7月。有4年的软件开发经验。
 最近一次就职于东莞市步步高教育电子有限公司（就是做家教机和小天才手表那个）。
