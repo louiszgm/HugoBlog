@@ -324,3 +324,20 @@ class KotlinSamPractice {
 
 需要再增加一个相同名称且参数为函数类型的接口。
 #+END_EXAMPLE
+* Kotlin-Lambda
+
+参考链接：https://juejin.im/post/5abd8ed351882510fd3fb8b1#heading-17
+- 基本表达式，和引用
+- lambda和java的互相使用（可以说一下Java中可以用this拿到自己，lambda却不可以：比如在Listener里面Java可以用this取消自己，Kotlin不行）
+- 带接收者的lambda（with apply等等，说说这些函数的实现原理）
+- 高阶函数 （高阶函数的定义，Java中怎么调用）
+- 内联函数
+- 高阶函数中的return
+
+** 它是什么
+** 它解决了什么问题
+** 它怎么用
+*** 说一下lambda表达式作为函数调用的最后一个参数时的三种写法，放到括号后面，省略括号和常规写法
+** 它在开发过程中使用的案例是什么样的
+** 它内部是怎么去做的
+** 总结，附上源码地址
