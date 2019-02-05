@@ -1,6 +1,6 @@
 +++
 title = "Kotlin-Lambda"
-lastmod = 2019-02-01T11:34:42+08:00
+lastmod = 2019-02-04T12:25:46+08:00
 draft = true
 weight = 2001
 author = "louiszgm"
@@ -24,15 +24,45 @@ author = "louiszgm"
 至于大多数人说使用Lambdas可以使代码更加的简洁。简洁这个本身就是比较主观的东西，有的人觉得简洁了，有的人觉得可读性更差了。
 这个我个人认为并不是Lambdas主要解决的问题。
 
-高阶函数具备以下两个特点，满足其一即可：
+
+## 前言 {#前言}
+
+说起Lambda，我们就会联想起函数式编程，高阶函数，闭包这几个名词。那么今天，我们就来弄清楚Lambda是什么东西，和这几个东西到底是什么关系？
+
+具备以下两点的其中一点的函数，我们把它叫做 `高阶函数`
 
 -   将函数作为输入传给函数
 -   让函数返回函数
 
+文章中，会围绕着下面这个类进行演示。
+
+新建一个叫Calculator的类。这个类的作用是，根据外部传入的函数类型的值。来动态的计算两个Int类型的值。并且返回结果
+
+里面有一个函数叫做calculate，返回一个Int类型的值，输入参数分别是：
+
+-   参数x，类型为Int
+-   参数y，类型为Int
+-   参数operator，类型为函数类型
+
+```Kotlin
+class Calculator{
+    //calculate是一个高阶函数，因为他满足上面我们所说的高阶函数的条件之一: 函数作为输入参数传给了函数
+    fun calculate(x: Int, y:Int, operator: (Int, Int)-> Int): Int{
+        return operator(x,y)
+    }
+
+    //这里直接抛出异常，而没有用到 !! ?. 的相关操作法，是为了让对这方面不熟悉的同学看的清晰
+    fun calculateWithNullableOperator(x: Int, y: Int,operator:((Int,Int)->Int)?):Int{
+        if (operator == null){
+            throw NullPointerException()
+        }
+        return operator(x,y)
+    }
+}
+```
+
 
 ## 它是什么 {#它是什么}
-
-说起Lambda，我们就会联想起函数式编程，高阶函数，闭包这几个名词。那么今天，我们就来弄清楚Lambda是什么东西，和这几个东西到底是什么关系？
 
 首先，Lambda是一个表达式。使用这个表达式，我们可以用来表示一个函数。那换句话说，Lambda是服务于函数的。
 
@@ -92,26 +122,93 @@ var text:String
 多个函数类型之间是可以互相嵌套的
 
 
-#### 初始化函数类型 {#初始化函数类型}
+#### 如何表示一个函数类型的值 {#如何表示一个函数类型的值}
 
-我们声明了一个字符串类型变量，是怎么赋值的
+表示一个String类型的值，如下：
 
 ```nil
 var text:String = "Instantiating a String type"
 ```
 
-同样的，我们声明了一个函数类型的变量之后，也是需要赋值的。那接下来，我们看下可以如果初始化一个函数类型的值。
+而一个函数类型的值，有哪几种方式呢？
 
-主要是分为三大类：
+我们声明一个函数类型的变量，分别用不同的方式去初始化。
+
+使用代码块的方式：
+
+```Kotlin
+private fun initFunctionTypeByCodeBlock(calculator: Calculator) {
+    //声明一个函数类型的变量
+    var sumOperator: (num1: Int, num2: Int)->Int
+
+    //通过Lambda expression初始化这个变量值
+    sumOperator = {num1, num2 -> num1 + num2 }
+    calculator.calculate(1,1,sumOperator)
+
+    //通过匿名函数的方式初始化这个变量值
+    sumOperator = fun(num1: Int, num2: Int):Int{return num1 + num2}
+    calculator.calculate(2,2,sumOperator)
+}
+```
+
+通过两个冒号的方式来初始化，Kotlin中是叫做callable reference
+这里提亮点在实践过程中会遇到的疑问：
+冒号前面，我到底是用类名，实例变量，还是不加东西
+
+```Kotlin
+
+```
+
+通过一个实现了函数类型的自定义类
+
+```Kotlin
+private fun initFunctionTypeByCustomClass(calculator: Calculator){
+        var sumOperator: (num1: Int, num2: Int)->Int
+
+        //通过实例化一个实现了对应函数类型的自定义类来赋值给函数类型的变量
+        sumOperator = SumOperator()
+        calculator.calculate(1,1,sumOperator)
+    }
+```
+
+到这里，真正和Lambda相关的只有一个地方。那就是作为一个函数类型的值。
 
 
 ## 它解决了什么问题 {#它解决了什么问题}
 
+Lambda表达式是用来表示 `函数类型` 的值
+
 
 ## 它怎么用 {#它怎么用}
 
+说到这里，我们来看下Lambda作为函数类型值的时候的用法
 
-### 说一下lambda表达式作为函数调用的最后一个参数时的三种写法，放到括号后面，省略括号和常规写法 {#说一下lambda表达式作为函数调用的最后一个参数时的三种写法-放到括号后面-省略括号和常规写法}
+写法就是用一个大括号包裹着，如下就是一个Lambda expression：
+
+```Kotlin
+{x,y -> x+y}
+```
+
+
+### 作为函数类型变量的值 {#作为函数类型变量的值}
+
+这个在上面已经说过了
+
+
+### 直接传递给高阶函数参数中的函数类型 {#直接传递给高阶函数参数中的函数类型}
+
+说一下lambda表达式作为函数调用的最后一个参数时的三种写法，放到括号后面，省略括号和常规写法
+
+```Kotlin
+//常规传值，用 {} 包裹
+calculator.calculate(1,1,{ x, y -> x+y })
+
+//当函数类型的参数是最后一个的时候，可以将Lambda移到最外面
+calculator.calculate(1,1) { x, y -> x+y }
+
+//当函数的参数中只有一个函数类型的参数时，可以省略圆括号()
+calculator.calculate { x, y -> x+y }
+```
 
 
 ## 它在开发过程中使用的案例是什么样的 {#它在开发过程中使用的案例是什么样的}
