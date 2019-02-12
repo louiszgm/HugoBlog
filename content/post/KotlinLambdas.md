@@ -1,42 +1,29 @@
 +++
 title = "Kotlin-Lambda"
-lastmod = 2019-02-04T12:25:46+08:00
-draft = true
+lastmod = 2019-02-12T21:12:38+08:00
+tags = ["Kotlin", "Lambdas", "函数", "高阶函数"]
+draft = false
 weight = 2001
 author = "louiszgm"
 +++
 
-参考链接：<https://juejin.im/post/5abd8ed351882510fd3fb8b1#heading-17>
-
--   基本表达式，和引用
--   lambda和java的互相使用（可以说一下Java中可以用this拿到自己，lambda却不可以：比如在Listener里面Java可以用this取消自己，Kotlin不行）
--   带接收者的lambda（with apply等等，说说这些函数的实现原理）
--   高阶函数 （高阶函数的定义，Java中怎么调用）
--   内联函数
--   高阶函数中的return
-
-目的是服务于Kotlin的高阶函数,他主要有三个作用
-
--   初始化函数类型的值
--   作为字面量直接传递给高阶函数的参数
--   作为高阶函数的返回值
-
-至于大多数人说使用Lambdas可以使代码更加的简洁。简洁这个本身就是比较主观的东西，有的人觉得简洁了，有的人觉得可读性更差了。
-这个我个人认为并不是Lambdas主要解决的问题。
-
-
 ## 前言 {#前言}
 
+文中的案例可以在 [这个网站](https://play.kotlinlang.org) 进行练习
+
 说起Lambda，我们就会联想起函数式编程，高阶函数，闭包这几个名词。那么今天，我们就来弄清楚Lambda是什么东西，和这几个东西到底是什么关系？
+
+
+### 高阶函数 {#高阶函数}
 
 具备以下两点的其中一点的函数，我们把它叫做 `高阶函数`
 
 -   将函数作为输入传给函数
 -   让函数返回函数
 
-文章中，会围绕着下面这个类进行演示。
+`文章中，会围绕着下面这个类进行演示。`
 
-新建一个叫Calculator的类。这个类的作用是，根据外部传入的函数类型的值。来动态的计算两个Int类型的值。并且返回结果
+新建一个叫Calculator的类。这个类的作用是，根据外部传入的 `函数类型` 的值。来动态的计算两个Int类型的值。并且返回结果
 
 里面有一个函数叫做calculate，返回一个Int类型的值，输入参数分别是：
 
@@ -68,7 +55,7 @@ class Calculator{
 
 什么是表达式？它有什么作用？我们平时在写代码的过程中肯定是用过很多的表达式，这里以String为例子:
 
-我们是用什么符号去表示一个String类型的值的，没错，就是用的双引号  `" "` ，在双引号里面就是我们的值。
+我们是用什么符号去表示一个String类型的值的，没错，就是用的双引号  `" "` 。
 
 -   Lambda表达式是用来表示 `函数类型` 的值
 -   双引号 `" "` 是用来表示 `String类型` 的值
@@ -104,7 +91,7 @@ var text:String
 
 而函数类型的表示形式，有如下的几种：
 
--   用圆括号 `()` 将函数的输入参数包起来, 圆括号后面用右箭头 `->` ，右箭头后面接的是函数的返回值的类型。连起来就是像下面那样
+1.  用圆括号 `()` 将函数的输入参数包起来, 圆括号后面用右箭头 `->` ，右箭头后面接的是函数的返回值的类型。连起来就是像下面那样
 
 ```text
 (A,B)->C, A和B是函数输入参数的类型，C是函数返回值的类型
@@ -132,46 +119,48 @@ var text:String = "Instantiating a String type"
 
 而一个函数类型的值，有哪几种方式呢？
 
-我们声明一个函数类型的变量，分别用不同的方式去初始化。
+我们声明一个函数类型的变量，分别用不同的方式去赋值。
 
-使用代码块的方式：
+-    使用代码块的方式：
 
-```Kotlin
-private fun initFunctionTypeByCodeBlock(calculator: Calculator) {
-    //声明一个函数类型的变量
-    var sumOperator: (num1: Int, num2: Int)->Int
-
-    //通过Lambda expression初始化这个变量值
-    sumOperator = {num1, num2 -> num1 + num2 }
-    calculator.calculate(1,1,sumOperator)
-
-    //通过匿名函数的方式初始化这个变量值
-    sumOperator = fun(num1: Int, num2: Int):Int{return num1 + num2}
-    calculator.calculate(2,2,sumOperator)
-}
-```
-
-通过两个冒号的方式来初始化，Kotlin中是叫做callable reference
-这里提亮点在实践过程中会遇到的疑问：
-冒号前面，我到底是用类名，实例变量，还是不加东西
-
-```Kotlin
-
-```
-
-通过一个实现了函数类型的自定义类
-
-```Kotlin
-private fun initFunctionTypeByCustomClass(calculator: Calculator){
+    ```Kotlin
+    private fun initFunctionTypeByCodeBlock(calculator: Calculator) {
+        //声明一个函数类型的变量
         var sumOperator: (num1: Int, num2: Int)->Int
 
-        //通过实例化一个实现了对应函数类型的自定义类来赋值给函数类型的变量
-        sumOperator = SumOperator()
+        //通过Lambda expression初始化这个变量值
+        sumOperator = {num1, num2 -> num1 + num2 }
         calculator.calculate(1,1,sumOperator)
-    }
-```
 
-到这里，真正和Lambda相关的只有一个地方。那就是作为一个函数类型的值。
+        //通过匿名函数的方式初始化这个变量值
+        sumOperator = fun(num1: Int, num2: Int):Int{return num1 + num2}
+        calculator.calculate(2,2,sumOperator)
+    }
+    ```
+
+-    使用callable reference
+
+-    通过一个实现了函数类型的自定义类
+
+    ```Kotlin
+    class SumOperator: (Int, Int)->Int{
+        override fun invoke(p1: Int, p2: Int): Int {
+            return p1 + p2
+        }
+    }
+    ```
+
+    ```Kotlin
+    private fun initFunctionTypeByCustomClass(calculator: Calculator){
+            var sumOperator: (num1: Int, num2: Int)->Int
+
+            //通过实例化一个实现了对应函数类型的自定义类来赋值给函数类型的变量
+            sumOperator = SumOperator()
+            calculator.calculate(1,1,sumOperator)
+        }
+    ```
+
+    到这里，真正和Lambda相关的只有一个地方。那就是作为一个函数类型的值。
 
 
 ## 它解决了什么问题 {#它解决了什么问题}
@@ -192,7 +181,15 @@ Lambda表达式是用来表示 `函数类型` 的值
 
 ### 作为函数类型变量的值 {#作为函数类型变量的值}
 
-这个在上面已经说过了
+这个在上面已经说过了,如下
+
+```Kotlin
+//声明一个函数类型的变量
+var sumOperator: (num1: Int, num2: Int)->Int
+
+//通过Lambda expression初始化这个变量值
+sumOperator = {num1, num2 -> num1 + num2 }
+```
 
 
 ### 直接传递给高阶函数参数中的函数类型 {#直接传递给高阶函数参数中的函数类型}
@@ -208,6 +205,76 @@ calculator.calculate(1,1) { x, y -> x+y }
 
 //当函数的参数中只有一个函数类型的参数时，可以省略圆括号()
 calculator.calculate { x, y -> x+y }
+```
+
+
+### 高阶函数中的return {#高阶函数中的return}
+
+> 这一小节的例子来自Kotlin官方文档
+
+在高阶函数中，直接使用return是退出整个函数
+
+```Kotlin
+fun foo() {
+    listOf(1, 2, 3, 4, 5).forEach {
+        if (it == 3) return // non-local return directly to the caller of foo()
+        print(it)
+    }
+    println("this point is unreachable")
+}
+
+//输出结果是： 12
+//我们可以看到最后面那一句 "this point is unreachable"并没有打印出来.
+//可见这里return的是foo()这个函数
+//要直接使用return的话，对应的高阶函数必须是用inline修饰的内联函数。这里的forEach就是
+```
+
+如果我们想要后面的那句话也打印出来的话，可以使用如下的做法
+
+```Kotlin
+
+fun foo() {
+    listOf(1, 2, 3, 4, 5).forEach {
+        if (it == 3) return@forEach // local return to the caller of the lambda, i.e. the forEach loop
+        print(it)
+    }
+    print(" done with implicit label")
+}
+
+//输出结果是： 1245 done with implicit label
+//我们使用了return@forEach的方式来返回lambda
+```
+
+我们也可以显示的指定label，如下，我们为forEach 贴个标签
+
+```Kotlin
+fun foo() {
+    listOf(1, 2, 3, 4, 5).forEach lit@{
+        if (it == 3) return@lit // local return to the caller of the lambda, i.e. the forEach loop
+        print(it)
+    }
+    print(" done with explicit label")
+}
+//输出结果为： 1245 done with implicit label
+//我们这里return的label 是我们自己显示指定的lit
+```
+
+虽然我们在forEach函数中return了，但剩下的4和5两个数字也打印出来了。如果我们希望forEach函数里面return
+了之后就不继续往下执行了（类似于for循环里面的break），我们应该怎么做呢？如下：
+
+```Kotlin
+fun foo() {
+    run loop@{
+        listOf(1, 2, 3, 4, 5).forEach {
+            if (it == 3) return@loop // non-local return from the lambda passed to run
+            print(it)
+        }
+    }
+    print(" done with nested loop")
+}
+
+//输出结果是：12 done with nested loop
+//这里我们用run{}这个函数把我们的嵌套起来，然后我们return的是run{}这个高阶函数
 ```
 
 
