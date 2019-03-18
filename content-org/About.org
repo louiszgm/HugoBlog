@@ -86,3 +86,4 @@ gradle插件采用的是二进制插件的形式，集成了checkstyle 和 Andro
 通过自定义AndroidLint规则来满足团队规范检测的需求。
 自定义的gradle是托管到公司的私有maven仓库上
 R：总计运行了5372次的检测，减少了一些代码上的低级错误
+* Android
