@@ -1,12 +1,12 @@
 +++
 title = "Keyboard Setting"
-lastmod = 2019-07-17T17:58:25+08:00
+lastmod = 2019-07-17T18:00:17+08:00
 draft = false
 weight = 2001
 author = "louiszgm"
 +++
 
-[![](/ox-hugo/HHKB_BT.jpg)]
+{{< figure src="/ox-hugo/HHKB_BT.jpg" >}}
 
 <!--more-->
 

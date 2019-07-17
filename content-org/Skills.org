@@ -12,7 +12,7 @@
 :HUGO_CODE_FENCE: true
 :END:
 
-[file:imgs/HHKB_BT.jpg]
+file:imgs/HHKB_BT.jpg
 
 #+hugo: more
 
