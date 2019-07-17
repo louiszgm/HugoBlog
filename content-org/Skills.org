@@ -1,0 +1,27 @@
+#+hugo_base_dir: ../
+#+hugo_section: ./post
+#+hugo_weight: 2001
+#+hugo_auto_set_lastmod: t
+#+hugo_draft: false
+#+author:
+#+hugo_custom_front_matter: :author "louiszgm"
+
+* Keyboard Setting
+:PROPERTIES:
+:EXPORT_FILE_NAME: keyboard
+:HUGO_CODE_FENCE: true
+:END:
+先用一下命令查询键盘设备的ID
+  #+BEGIN_SRC shell
+    xinput list
+  #+END_SRC
+
+**  交换Win键和Alt键的位置
+  #+BEGIN_SRC shell
+    setxkbmap -option altwin:swap_alt_win -device $DEVICE_ID
+  #+END_SRC
+
+**  CapsLock 和 Ctrl调换(适用于Emacs的。Mac上可以设置，Windows上和Linux上就需要用这个命令了，除非键盘自身支持，比如HHKB)
+  #+BEGIN_SRC shell
+    setxkbmap -option ctrl:nocaps -device $DEVICE_ID
+  #+END_SRC
